@@ -4,9 +4,9 @@ Pihole for k8s aims to run a pihole instance in a Kubernetes cluster, specially 
 # Install
 To run pihole in your cluster, we need to provision a storage class where long term data will be stored.
 
-* Edit the **pihle-pvc.yml** file to change the storageclass of the 2 persistenvolumeclaims and save the changes
+* Edit the **pihle-pvc.yml** file to change the StorageClass of the 2 PersistenVolumeClaims and save the changes
 * Create the **pihole** namespace where all the resources will be created running `kubectl create -f pihole-pvc.yml`
-* Create the persistentvolumeclaims with `kubectl create -f pihole-pvc.yml`
+* Create the PersistentVolumeClaims with `kubectl create -f pihole-pvc.yml`
 * Edit the **pihole-deployment.yml** file to set the *WEBPASSWORD* used to access to the web interface and the *TZ* where you are located. Don't forget to make the changes
 * Create the deployment running `kubectl create -f pihole-deployment.yml`
 * Verify that the pihole pod is running with `kubectl get pod -n pihole`. The result should be similar to the following output:

@@ -2,9 +2,9 @@
 Pihole para k8s tiene como objetivo correr una instancia de pihole en un clúster de Kubernetes, especificamente en uno corriendo sobre raspberrys.
 
 # Instalación
-Para ejecutar la instancia de Pihole en tu clúster es necesario crear una storageclass donde se almacenarán a largo plazo los datos.
+Para ejecutar la instancia de Pihole en tu clúster es necesario crear una StorageClass donde se almacenarán a largo plazo los datos.
 
-* Edita el archivo **pihle-pvc.yml** para cambiar la storageclass de las dos persistenvolumeclaims, no olvides guardar los cambios.
+* Edita el archivo **pihle-pvc.yml** para cambiar la StorageClass de las dos PersistentVolumeClaims, no olvides guardar los cambios.
 * Crea el  namespace **pihole** que alojará todos los recursos de pihole, para crearlo corre el comando `kubectl create -f pihole-pvc.yml` .
 * Crea las persistentvolumeclaims con el comando `kubectl create -f pihole-pvc.yml` .
 * Edita el archivo **pihole-deployment.yml** para colocar la *WEBPASSWORD* que se utilizará para acceder a la interfáz web y la *TZ* donde te ubicas. No olvides guardar los cambios.
