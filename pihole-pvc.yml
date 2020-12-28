@@ -5,7 +5,7 @@ metadata:
   name: pihole-data-nfs
   namespace: pihole
   annotations:
-    volume.beta.kubernetes.io/storage-class: "nfs-client"
+    volume.beta.kubernetes.io/storage-class: "nfs-nas"
 spec:
   accessModes:
     - ReadWriteMany
@@ -19,10 +19,10 @@ metadata:
   name: pihole-dnsmasq-nfs
   namespace: pihole
   annotations:
-    volume.beta.kubernetes.io/storage-class: "nfs-client"
+    volume.beta.kubernetes.io/storage-class: "nfs-nas"
 spec:
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 5Mi
+      storage: 100Mi
